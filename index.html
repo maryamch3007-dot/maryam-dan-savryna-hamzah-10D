@@ -8,119 +8,130 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #f5eee6, #e8d8c3);
-    color: #4b2e2e;
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(to bottom,#f5eee6,#e8d8c3);
+    color:#4b2e2e;
 }
 
 /* ===== HEADER (TIDAK TERPOTONG) ===== */
-.banner {
-    width: 100%;
-    height: auto; /* supaya tidak terpotong */
-    display: block;
-    object-fit: contain; /* tidak crop */
+.banner{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
 }
 
-/* ===== NAVBAR FLOATING MODERN ===== */
+/* ===== NAVBAR PREMIUM ===== */
 nav{
-    position: sticky;
-    top: 25px;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    margin-top: -35px;
+    position:sticky;
+    top:25px;
+    display:flex;
+    justify-content:center;
+    z-index:1000;
+    margin-top:-35px;
 }
 
 nav ul{
-    list-style: none;
-    display: flex;
-    gap: 28px;
-    background: rgba(62,39,35,0.95);
-    padding: 15px 40px;
-    border-radius: 60px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
-    backdrop-filter: blur(10px);
+    list-style:none;
+    display:flex;
+    gap:30px;
+    padding:15px 45px;
+    border-radius:60px;
+    background:rgba(62,39,35,0.85);
+    backdrop-filter:blur(12px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
 }
 
 nav ul li a{
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    padding: 8px 15px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    font-weight:500;
+    padding:8px 16px;
+    border-radius:30px;
+    transition:all 0.3s ease;
+    position:relative;
 }
 
+/* hover glow */
 nav ul li a:hover{
-    background: #ffcc80;
-    color: #3e2723;
+    background:#ffcc80;
+    color:#3e2723;
+    box-shadow:0 0 12px rgba(255,204,128,0.6);
+}
+
+/* active menu */
+nav ul li a.active{
+    background:#ffcc80;
+    color:#3e2723;
+    box-shadow:0 0 15px rgba(255,204,128,0.8);
 }
 
 /* ===== MAIN ===== */
-main {
-    padding: 80px 12% 60px 12%;
-    animation: fadeIn 1s ease-in;
+main{
+    padding:90px 12% 60px 12%;
+    animation:fadeIn 1s ease-in;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
-.section-box {
-    background: white;
-    padding: 35px;
-    border-radius: 25px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-    margin-bottom: 35px;
-    transition: 0.3s;
+.section-box{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 18px 35px rgba(0,0,0,0.08);
+    margin-bottom:40px;
+    transition:0.3s;
 }
 
 .section-box:hover{
-    transform: translateY(-6px);
+    transform:translateY(-8px);
+    box-shadow:0 25px 45px rgba(0,0,0,0.12);
 }
 
-h1 {
-    margin-bottom: 15px;
-    font-size: 28px;
+h1{
+    margin-bottom:15px;
+    font-size:30px;
 }
 
-h2 {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    font-size: 22px;
+h2{
+    margin-top:10px;
+    margin-bottom:15px;
+    font-size:23px;
 }
 
-p {
-    margin-bottom: 15px;
-    line-height: 1.8;
+p{
+    margin-bottom:15px;
+    line-height:1.8;
 }
 
-ul {
-    margin-top: 10px;
-    margin-left: 20px;
+ul{
+    margin-top:10px;
+    margin-left:20px;
 }
 
-li {
-    margin-bottom: 10px;
+li{
+    margin-bottom:10px;
 }
 
 /* ===== FOOTER ===== */
-footer {
-    background-color: #3e2723;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+footer{
+    background:#3e2723;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
 }
 </style>
 </head>
@@ -128,13 +139,14 @@ footer {
 <body>
 
 <header>
-    <img src="ChatGPT Image Feb 25, 2026, 10_24_19 AM.png" 
-    alt="Header Toko Buku" class="banner">
+    <img src="ChatGPT Image Feb 25, 2026, 10_24_19 AM.png"
+    alt="Header Toko Buku"
+    class="banner">
 </header>
 
 <nav>
     <ul>
-        <li><a href="index.html">Beranda</a></li>
+        <li><a href="index.html" class="active">Beranda</a></li>
         <li><a href="produk.html">Produk</a></li>
         <li><a href="bedah-buku.html">Bedah Buku</a></li>
         <li><a href="testimoni.html">Testimoni</a></li>
@@ -148,7 +160,6 @@ footer {
 
 <div class="section-box">
     <h1>Selamat Datang di Usaha Buku Maryam dan Savryna</h1>
-
     <p>
         Website ini berisi informasi tentang produk buku, bedah buku,
         dan testimoni pelanggan.
@@ -157,23 +168,17 @@ footer {
 
 <div class="section-box">
     <h2>Jenis-Jenis Buku yang Kami Jual</h2>
-
     <p>
         Kami menyediakan berbagai jenis buku yang cocok untuk semua kalangan,
         mulai dari anak-anak hingga orang dewasa.
-        Berikut beberapa kategori utama yang tersedia di Toko Buku kami:
     </p>
 
     <ul>
-        <li><strong>Buku Pelajaran Sekolah:</strong> Matematika, Bahasa Indonesia, IPA, IPS, dan lainnya untuk tingkat SD, SMP, hingga SMA.</li>
-
-        <li><strong>Novel Fiksi:</strong> Novel remaja, cerita cinta, fiksi ilmiah, dan misteri dari penulis lokal maupun internasional.</li>
-
-        <li><strong>Buku Motivasi dan Pengembangan Diri:</strong> Buku-buku inspiratif seperti <em>Atomic Habits</em>, <em>Berani Tidak Disukai</em>, dan lainnya.</li>
-
-        <li><strong>Buku Anak-Anak:</strong> Buku cerita bergambar, buku aktivitas, dan edukasi dini seperti <em>Belajar Huruf & Angka</em>.</li>
-
-        <li><strong>Buku Referensi Umum:</strong> Ensiklopedia, kamus, buku pengetahuan umum, dan buku-buku hobi seperti memasak atau berkebun.</li>
+        <li><strong>Buku Pelajaran Sekolah:</strong> Matematika, Bahasa Indonesia, IPA, IPS, dan lainnya.</li>
+        <li><strong>Novel Fiksi:</strong> Novel remaja, cerita cinta, fiksi ilmiah, dan misteri.</li>
+        <li><strong>Buku Motivasi:</strong> Buku inspiratif seperti <em>Atomic Habits</em> dan <em>Berani Tidak Disukai</em>.</li>
+        <li><strong>Buku Anak:</strong> Cerita bergambar dan edukasi dini.</li>
+        <li><strong>Buku Referensi:</strong> Ensiklopedia, kamus, dan buku hobi.</li>
     </ul>
 </div>
 
