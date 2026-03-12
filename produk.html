@@ -16,13 +16,15 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
+/* BACKGROUND GALAXY */
+
 body{
 background:linear-gradient(#020111,#081b45,#020111);
 color:white;
 overflow-x:hidden;
 }
 
-/* ⭐ BACKGROUND BINTANG */
+/* BINTANG */
 
 .stars{
 position:fixed;
@@ -38,83 +40,40 @@ from{background-position:0 0;}
 to{background-position:10000px 5000px;}
 }
 
-/* 🌠 METEOR */
-
-.meteor{
-position:fixed;
-top:-50px;
-left:-50px;
-width:3px;
-height:120px;
-background:linear-gradient(white,transparent);
-transform:rotate(45deg);
-animation:meteorFall 6s linear infinite;
-}
-
-@keyframes meteorFall{
-0%{transform:translate(-200px,-200px) rotate(45deg);}
-100%{transform:translate(1200px,900px) rotate(45deg);}
-}
-
-/* 🪐 PLANET */
-
-.planet{
-position:fixed;
-width:120px;
-height:120px;
-border-radius:50%;
-background:radial-gradient(circle,#4facfe,#00f2fe);
-top:80px;
-right:80px;
-box-shadow:0 0 40px #00eaff;
-animation:float 6s ease-in-out infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-25px)}
-}
-
-/* 🚀 ROKET */
-
-.rocket{
-position:fixed;
-bottom:50px;
-left:-100px;
-font-size:40px;
-animation:rocketFly 15s linear infinite;
-}
-
-@keyframes rocketFly{
-0%{left:-100px}
-100%{left:120%}
-}
-
 /* NAVBAR */
 
 nav{
-display:flex;
-justify-content:center;
-margin:30px;
-z-index:2;
-position:relative;
-}
-
-.nav-container{
-background:rgba(255,255,255,0.1);
-padding:15px 40px;
-border-radius:50px;
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(0,0,0,0.5);
 backdrop-filter:blur(10px);
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
-font-weight:600;
+.navbar{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
 }
 
-nav a:hover{
+.logo{
+font-size:22px;
+font-weight:700;
+color:#00eaff;
+}
+
+.menu a{
+margin:0 12px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
+}
+
+.menu a:hover{
 color:#00eaff;
 }
 
@@ -124,7 +83,7 @@ h1{
 text-align:center;
 margin:40px;
 font-size:36px;
-text-shadow:0 0 20px #00eaff;
+text-shadow:0 0 15px #00eaff;
 }
 
 /* GRID PRODUK */
@@ -136,20 +95,20 @@ gap:30px;
 padding:40px;
 }
 
-/* CARD */
+/* CARD PRODUK */
 
 .produk{
 background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:20px;
 backdrop-filter:blur(10px);
-box-shadow:0 0 20px rgba(0,200,255,0.3);
+box-shadow:0 0 20px rgba(0,200,255,0.2);
 transition:0.4s;
 }
 
 .produk:hover{
 transform:translateY(-10px);
-box-shadow:0 0 35px rgba(0,200,255,0.9);
+box-shadow:0 0 40px rgba(0,200,255,0.9);
 }
 
 .produk img{
@@ -165,14 +124,14 @@ color:#00eaff;
 }
 
 .harga{
+color:#7de8ff;
 font-weight:bold;
 margin:10px 0;
-color:#7de8ff;
 }
 
 .deskripsi{
 font-size:14px;
-line-height:1.5;
+line-height:1.6;
 }
 
 /* TOMBOL */
@@ -185,48 +144,15 @@ border-radius:25px;
 background:linear-gradient(45deg,#00c6ff,#0072ff);
 color:white;
 text-decoration:none;
-cursor:pointer;
 }
 
-/* KERANJANG */
+/* FOOTER */
 
-.cart{
-position:fixed;
-top:20px;
-right:20px;
-background:#00c6ff;
-padding:8px 14px;
-border-radius:20px;
-font-weight:bold;
-}
-
-/* POPUP */
-
-.popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-display:none;
-justify-content:center;
-align-items:center;
-}
-
-.popup-content{
-background:#081b45;
-padding:30px;
-border-radius:15px;
-max-width:400px;
+footer{
 text-align:center;
-}
-
-.close{
-cursor:pointer;
-color:red;
-margin-top:10px;
-display:inline-block;
+padding:30px;
+background:rgba(0,0,0,0.6);
+margin-top:40px;
 }
 
 </style>
@@ -235,70 +161,108 @@ display:inline-block;
 <body>
 
 <div class="stars"></div>
-<div class="meteor"></div>
-<div class="planet"></div>
-<div class="rocket">🚀</div>
 
-<div class="cart">🛒 <span id="cartCount">0</span></div>
+<!-- NAVBAR -->
 
 <nav>
-<div class="nav-container">
-<a href="#">Beranda</a>
-<a href="#">Produk</a>
-<a href="#">Kontak</a>
+<div class="navbar">
+
+<div class="logo">🪐 Planet Book</div>
+
+<div class="menu">
+<a href="index.html">Beranda</a>
+<a href="produk.html">Produk</a>
+<a href="bedah-buku.html">Bedah Buku</a>
+<a href="testimoni.html">Testimoni</a>
+<a href="tampil-testimoni.html">Testimoni Pembeli</a>
+<a href="kontak.html">Kontak</a>
+<a href="event.html">Event</a>
+</div>
+
 </div>
 </nav>
 
-<h1>🪐 Planet Book Store</h1>
+<h1>📚 Daftar Produk Buku</h1>
 
 <section class="daftar-produk">
+
+<!-- HELLO -->
 
 <div class="produk">
 <img src="Hello.jfif">
 <h2>Hello</h2>
 <p class="harga">Rp189.900</p>
-<p class="deskripsi">Novel tentang berdamai dengan masa lalu.</p>
-<a class="btn" onclick="showDetail('Hello adalah novel tentang perjalanan emosi dan menerima masa lalu.')">Detail</a>
-<a class="btn" onclick="addCart()">Tambah</a>
+<p class="deskripsi">
+Novel penuh makna tentang perpisahan dan proses menerima masa lalu.
+</p>
+<a href="#" class="btn">Beli</a>
 </div>
+
+<!-- BULAN -->
 
 <div class="produk">
 <img src="Bulan.jpg">
 <h2>Bulan</h2>
 <p class="harga">Rp199.900</p>
-<p class="deskripsi">Petualangan Raib dan teman-temannya.</p>
-<a class="btn" onclick="showDetail('Buku fantasi karya Tere Liye tentang petualangan klan Bulan.')">Detail</a>
-<a class="btn" onclick="addCart()">Tambah</a>
+<p class="deskripsi">
+Petualangan Raib, Seli, dan Ali menjelajah dunia klan Bulan.
+</p>
+<a href="#" class="btn">Beli</a>
+</div>
+
+<!-- MATEMATIKA -->
+
+<div class="produk">
+<img src="Matematika.jfif">
+<h2>Matematika</h2>
+<p class="harga">Rp99.999</p>
+<p class="deskripsi">
+Panduan belajar matematika dari dasar hingga lanjutan.
+</p>
+<a href="#" class="btn">Beli</a>
+</div>
+
+<!-- NEGERI 5 MENARA -->
+
+<div class="produk">
+<img src="Negeri 5 Menara.jfif">
+<h2>Negeri 5 Menara</h2>
+<p class="harga">Rp299.900</p>
+<p class="deskripsi">
+Novel inspiratif dengan pesan Man Jadda Wajada.
+</p>
+<a href="#" class="btn">Beli</a>
+</div>
+
+<!-- DULCE DE LECHE -->
+
+<div class="produk">
+<img src="Dulce de Leche.jfif">
+<h2>Dulce de Leche</h2>
+<p class="harga">Rp239.900</p>
+<p class="deskripsi">
+Cerita dan inspirasi dari manisnya karamel susu.
+</p>
+<a href="#" class="btn">Beli</a>
+</div>
+
+<!-- CINDERELLA -->
+
+<div class="produk">
+<img src="Cinderella.jfif">
+<h2>Cinderella</h2>
+<p class="harga">Rp259.900</p>
+<p class="deskripsi">
+Dongeng klasik tentang kebaikan hati dan harapan.
+</p>
+<a href="#" class="btn">Beli</a>
 </div>
 
 </section>
 
-<div class="popup" id="popup">
-<div class="popup-content">
-<p id="popupText"></p>
-<span class="close" onclick="closePopup()">Tutup</span>
-</div>
-</div>
-
-<script>
-
-let cart = 0;
-
-function addCart(){
-cart++;
-document.getElementById("cartCount").innerText = cart;
-}
-
-function showDetail(text){
-document.getElementById("popupText").innerText = text;
-document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-
-</script>
+<footer>
+© 2026 Planet Book Store 🚀
+</footer>
 
 </body>
 </html>
