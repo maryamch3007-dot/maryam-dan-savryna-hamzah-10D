@@ -11,142 +11,161 @@
 
 /* RESET */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* BODY */
+/* BODY SPACE BACKGROUND */
 body{
-    font-family:'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #f5eee6, #e8d8c3);
-    color:#4b2e2e;
+font-family:'Poppins', sans-serif;
+background: radial-gradient(circle at top,#0f2027,#203a43,#2c5364);
+color:white;
+min-height:100vh;
 }
 
-/* ===== NAVBAR MODERN ROUNDED ===== */
+/* ===== NAVBAR SPACE ===== */
+
 nav{
-    display:flex;
-    justify-content:center;
-    margin:30px auto;
+display:flex;
+justify-content:center;
+margin:30px auto;
 }
 
-nav .nav-container{
-    background:#3e2723;
-    padding:15px 40px;
-    border-radius:50px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+.nav-container{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:15px 40px;
+border-radius:50px;
+box-shadow:0 0 20px rgba(0,150,255,0.4);
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 18px;
-    font-weight:600;
-    font-size:14px;
-    letter-spacing:0.5px;
-    position:relative;
-    transition:0.3s;
-}
-
-/* hover effect */
-nav a::after{
-    content:"";
-    position:absolute;
-    width:0%;
-    height:2px;
-    background:#ffcc80;
-    left:50%;
-    bottom:-6px;
-    transform:translateX(-50%);
-    transition:0.3s;
-}
-
-nav a:hover::after{
-    width:100%;
+color:white;
+text-decoration:none;
+margin:0 18px;
+font-weight:600;
+font-size:14px;
+position:relative;
+transition:0.3s;
 }
 
 nav a:hover{
-    color:#ffcc80;
+color:#00eaff;
 }
 
 /* JUDUL */
+
 h1{
-    text-align:center;
-    margin:40px 0 30px 0;
-    font-size:32px;
-    font-weight:700;
+text-align:center;
+margin:40px 0;
+font-size:34px;
+letter-spacing:2px;
+text-shadow:0 0 15px rgba(0,200,255,0.8);
 }
 
 /* GRID PRODUK */
+
 .daftar-produk{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-    gap:30px;
-    padding:30px 60px 60px 60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+padding:30px 60px 60px 60px;
 }
 
 /* CARD PRODUK */
+
 .produk{
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(111,78,55,0.2);
-    text-align:center;
-    transition:0.3s;
+background:rgba(255,255,255,0.05);
+border-radius:20px;
+padding:20px;
+text-align:center;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 0 15px rgba(0,200,255,0.2);
+transition:0.4s;
 }
 
+/* HOVER CARD */
+
 .produk:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 25px rgba(111,78,55,0.35);
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 30px rgba(0,200,255,0.7);
 }
 
 /* GAMBAR */
+
 .produk img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:15px;
-    margin-bottom:15px;
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
 }
 
-/* NAMA */
+/* NAMA BUKU */
+
 .produk h2{
-    margin-bottom:10px;
-    color:#6f4e37;
+margin-bottom:10px;
+color:#00eaff;
 }
 
 /* HARGA */
+
 .harga{
-    font-weight:bold;
-    color:#8b5e3c;
-    margin-bottom:10px;
+font-weight:bold;
+color:#7de8ff;
+margin-bottom:10px;
 }
 
 /* DESKRIPSI */
+
 .deskripsi{
-    font-size:14px;
-    line-height:1.6;
-    text-align:justify;
+font-size:14px;
+line-height:1.6;
+text-align:justify;
+color:#d6f8ff;
 }
 
-/* TOMBOL */
+/* TOMBOL BELI */
+
+.beli{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-size:14px;
+transition:0.3s;
+box-shadow:0 0 10px rgba(0,200,255,0.6);
+}
+
+.beli:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px rgba(0,200,255,1);
+}
+
+/* TOMBOL KEMBALI */
+
 .kembali{
-    display:block;
-    width:220px;
-    margin:30px auto 60px auto;
-    padding:12px;
-    text-align:center;
-    background:#8b5e3c;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    transition:0.3s;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+display:block;
+width:220px;
+margin:40px auto 60px auto;
+padding:12px;
+text-align:center;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+border-radius:40px;
+transition:0.3s;
+box-shadow:0 0 15px rgba(0,200,255,0.8);
 }
 
 .kembali:hover{
-    background:#a9745b;
-    transform:translateY(-3px);
+transform:translateY(-3px);
+box-shadow:0 0 25px rgba(0,200,255,1);
 }
 
 </style>
@@ -166,68 +185,68 @@ h1{
 </div>
 </nav>
 
-<h1>📚 Daftar Produk Buku</h1>
+<h1>🌌 Daftar Produk Buku Planet</h1>
 
 <section class="daftar-produk">
 
 <div class="produk">
-<img src="Hello.jfif" alt="Hello">
+<img src="Hello.jfif">
 <h2>Hello</h2>
 <p class="harga">Rp189.900</p>
 <p class="deskripsi">
-Novel penuh makna tentang perpisahan dan proses berdamai dengan diri sendiri. 
-Mengajak pembaca menyapa masa lalu, menerima kenyataan, dan melangkah ke masa depan dengan hati yang lebih tenang.
+Novel tentang perpisahan dan proses menerima masa lalu dengan hati yang tenang.
 </p>
+<a href="#" class="beli">Beli Buku</a>
 </div>
 
 <div class="produk">
-<img src="Bulan.jpg" alt="Bulan">
+<img src="Bulan.jpg">
 <h2>Bulan</h2>
 <p class="harga">Rp199.900</p>
 <p class="deskripsi">
-Petualangan fantasi Raib, Seli, dan Ali di Klan Bulan. 
-Cerita penuh aksi, persahabatan, dan pesan moral tentang keberanian dan tanggung jawab.
+Petualangan fantasi Raib, Seli, dan Ali menjelajah dunia klan Bulan.
 </p>
+<a href="#" class="beli">Beli Buku</a>
 </div>
 
 <div class="produk">
-<img src="Matematika.jfif" alt="Matematika">
+<img src="Matematika.jfif">
 <h2>Matematika</h2>
 <p class="harga">Rp99.999</p>
 <p class="deskripsi">
-Panduan belajar sistematis dari dasar hingga lanjutan. 
-Disusun runtut dengan teori, contoh soal, dan latihan untuk melatih logika dan analisis.
+Panduan belajar matematika dari dasar hingga lanjutan secara sistematis.
 </p>
+<a href="#" class="beli">Beli Buku</a>
 </div>
 
 <div class="produk">
-<img src="Negeri 5 Menara.jfif" alt="Negeri 5 Menara">
+<img src="Negeri 5 Menara.jfif">
 <h2>Negeri 5 Menara</h2>
 <p class="harga">Rp299.900</p>
 <p class="deskripsi">
-Novel inspiratif tentang perjuangan dan mimpi. 
-Dengan semangat Man Jadda Wajada, buku ini mengajarkan kerja keras dan keyakinan.
+Novel inspiratif tentang perjuangan meraih mimpi dengan semangat Man Jadda Wajada.
 </p>
+<a href="#" class="beli">Beli Buku</a>
 </div>
 
 <div class="produk">
-<img src="Dulce de Leche.jfif" alt="Dulce de Leche">
+<img src="Dulce de Leche.jfif">
 <h2>Dulce de Leche</h2>
 <p class="harga">Rp239.900</p>
 <p class="deskripsi">
-Mengenal manisnya karamel susu khas Amerika Latin. 
-Dilengkapi cerita asal-usul dan inspirasi olahan yang menggugah selera.
+Cerita tentang manisnya karamel susu khas Amerika Latin.
 </p>
+<a href="#" class="beli">Beli Buku</a>
 </div>
 
 <div class="produk">
-<img src="Cinderella.jfif" alt="Cinderella">
+<img src="Cinderella.jfif">
 <h2>Cinderella</h2>
 <p class="harga">Rp259.900</p>
 <p class="deskripsi">
-Cerita klasik penuh pesan tentang kesabaran, kebaikan hati, dan harapan. 
-Dongeng yang selalu menginspirasi sepanjang masa.
+Dongeng klasik tentang kebaikan hati, harapan, dan keajaiban.
 </p>
+<a href="#" class="beli">Beli Buku</a>
 </div>
 
 </section>
@@ -235,5 +254,4 @@ Dongeng yang selalu menginspirasi sepanjang masa.
 <a href="index.html" class="kembali">← Kembali ke Beranda</a>
 
 </body>
-
 </html>
